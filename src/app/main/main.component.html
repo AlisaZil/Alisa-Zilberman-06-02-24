@@ -1,7 +1,11 @@
 <div class="page">
 
     <div class="search-box">
-        <input type="text" placeholder="Type To Search">
+        <input type="text" placeholder="Type To Search" (keyup)="searchForPlaces($event)">
+
+        <div class="combo-box">
+
+        </div>
     </div>
 
 </div>
