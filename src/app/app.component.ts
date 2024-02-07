@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WeatherService } from './services/weather.service'; 
+import { WeatherService, Place } from './services/weather.service'; 
 
 @Component({
   selector: 'app-root',
@@ -11,10 +11,10 @@ export class AppComponent {
 
   constructor(private weatherService: WeatherService){}
 
-  // ngOnInit(): void {
-  //   this.weatherService.getPlacesByString("lon").subscribe((response:any) => {
-  //     console.log(response);
+  ngOnInit(): void {
+    this.weatherService.getPlacesByString("lon").subscribe((response:Place|unknown) => {
+      console.log(response);
       
-  //   });
-  // }
+    });
+  }
 }
