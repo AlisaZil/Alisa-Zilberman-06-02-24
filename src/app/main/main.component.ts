@@ -11,7 +11,12 @@ export class MainComponent {
   placesList: any[] = [];
   isComboBoxOpen: boolean = false;
 
-  constructor( private weatherService:WeatherService) { }
+  weekForcast: any[] = [{ day: "Sunday", icon: "sun", temp: 30 },
+    { day: "Monday", icon: "cloud", temp: 13 },
+    { day: "Sunday", icon: "sun-cloud", temp: 20 },
+    { day: "Sunday", icon: "sun", temp: 30 }]
+
+  constructor(private weatherService:WeatherService) { }
   
   searchForPlaces(e: KeyboardEvent) {
     

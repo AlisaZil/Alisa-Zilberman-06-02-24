@@ -1,15 +1,21 @@
 .page{
     
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    user-select: none;
 
     .search-box{
         width: 30%;
         min-width: 450px;
+        height: 8%;
 
         input{
             width: 100%;
@@ -50,5 +56,70 @@
             transition: 0.3s;
             overflow: auto;
         }
+    }
+
+    .today-forcast-section{
+        height: fit-content;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        margin-bottom: 50px;
+
+        .header{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 60px;
+
+            .place-name{
+                font-size: 55px;
+            }
+
+            .date{
+                font-size: 22px;
+                font-weight: 300;
+            }
+        }
+
+        .weather-section{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .icon{
+                height: 158px;
+                width: 158px;
+
+                margin-bottom: 30px;
+            }
+
+            .temp{
+                font-size: 64px;
+            }
+        }
+    }
+
+    .week-forcast-section{
+
+        width: 100%;
+        height: fit-content;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .card{
+            margin: 0 15px;
+        }
+
     }
 }
