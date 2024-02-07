@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-weather-card',
+  selector: 'weather-card',
   templateUrl: './weather-card.component.html',
-  styleUrls: ['./weather-card.component.sass']
+  styleUrls: ['./weather-card.component.scss']
 })
 export class WeatherCardComponent {
 
