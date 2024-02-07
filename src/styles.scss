@@ -7,9 +7,13 @@
 
 html{
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
     color: var(--font-color);
 
     background-color: var(--background-color);
+}
+
+p{
+    margin: 0;
 }
