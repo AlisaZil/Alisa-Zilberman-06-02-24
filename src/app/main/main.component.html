@@ -1,10 +1,14 @@
 <div class="page">
 
     <div class="search-box">
-        <input type="text" placeholder="Type To Search" (keyup)="searchForPlaces($event)">
+        <input type="text" placeholder="Type To Search" 
+        (keyup)="searchForPlaces($event)"
+        (focusout)="isComboBoxOpen = false"
+        [ngClass]="{'input-open': isComboBoxOpen}">
 
-        <div class="combo-box">
+        <div class="combo-box" [ngStyle]="{'height': isComboBoxOpen? 'fit-content':'0px'}">
 
+            <div class="option" *ngFor="let place of placesList">{{place.LocalizedName}}</div>
         </div>
     </div>
 
