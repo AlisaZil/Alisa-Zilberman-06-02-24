@@ -26,4 +26,8 @@ export class WeatherService {
     return this.httpClient.get<Place[]>(this.URL + '/locations/v1/cities/autocomplete?apikey=' + this.apiKey + '&q=' + searchString);
   }
 
+  getFiveDaysForecastByKey(placeKey:string) {
+    return this.httpClient.get<any>(this.URL + '/forecasts/v1/daily/5day/' + placeKey + '?apikey=' + this.apiKey);
+  }
+
 }

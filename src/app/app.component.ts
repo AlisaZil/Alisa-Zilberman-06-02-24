@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private weatherService: WeatherService){}
 
   ngOnInit(): void {
-    this.weatherService.getPlacesByString("lon").subscribe((response:Place|unknown) => {
+    this.weatherService.getFiveDaysForecastByKey("328328").subscribe((response:any) => {
       console.log(response);
       
     });
