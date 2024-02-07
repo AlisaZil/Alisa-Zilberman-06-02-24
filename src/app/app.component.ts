@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { WeatherService, Place } from './services/weather.service'; 
 
 @Component({
   selector: 'app-root',
@@ -9,12 +8,7 @@ import { WeatherService, Place } from './services/weather.service';
 export class AppComponent {
   title = 'app';
 
-  constructor(private weatherService: WeatherService){}
+  constructor(){}
 
-  ngOnInit(): void {
-    this.weatherService.getFiveDaysForecastByKey("328328").subscribe((response:any) => {
-      console.log(response);
-      
-    });
-  }
+  ngOnInit(): void {}
 }
