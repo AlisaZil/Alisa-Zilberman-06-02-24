@@ -1,7 +1,7 @@
-<div class="card">
+<div class="card" *ngIf="card">
 
-    <p class="place-name">London</p>
-    <img src="../../assets/icons/cloud.svg" alt="weather-icon" class="weather-icon">
-    <p class="temp">30C</p>
+    <p class="place-name">{{card.placeName}}</p>
+    <img src="../../assets/icons/{{card.icon}}" alt="weather-icon" class="weather-icon">
+    <p class="temp">{{card.temp}}</p>
 
 </div>
