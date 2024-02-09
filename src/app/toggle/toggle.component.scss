@@ -33,3 +33,14 @@
         margin-left: 52px;
     }
 }
+
+.body{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .label{
+        margin-right: 10px;
+    }
+}

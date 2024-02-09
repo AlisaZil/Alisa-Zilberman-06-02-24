@@ -1,4 +1,9 @@
-<div (click)="handleToggleClick($event)"
-class="toggle {{toggleStatus? 'right':'left'}}" >
-    <div class="toggle-ball"></div>
+<div class="body">
+
+    <p *ngIf="label" class="label">{{label}}</p>
+    
+    <div (click)="handleToggleClick($event)" class="toggle {{toggleStatus? 'right':'left'}}">
+        <div class="toggle-ball"></div>
+    </div>
+
 </div>

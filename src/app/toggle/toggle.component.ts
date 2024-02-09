@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'toggle',
@@ -6,11 +6,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./toggle.component.scss']
 })
 export class ToggleComponent {
-
-  toggleStatus: boolean = false;
+  
+  @Input() label?: string;
   @Output() toggleClick = new EventEmitter<boolean>();
 
-
+  public toggleStatus: boolean = false;
+  
   handleToggleClick(e: MouseEvent) {
 
     this.toggleStatus = !this.toggleStatus;
