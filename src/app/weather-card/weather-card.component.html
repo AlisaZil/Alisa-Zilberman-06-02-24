@@ -1,5 +1,9 @@
 <div class="card" *ngIf="card">
 
+    <div *ngIf="card.isFave" class="heart-icon">
+        <img src="../../assets/icons/heart.svg" alt="heart">
+    </div>
+
     <p class="day">{{card.day}}</p>
     <img src="../../assets/icons/{{card.icon}}.svg" alt="weather-icon" class="weather-icon">
     <p class="temp">{{card.temp}}</p>

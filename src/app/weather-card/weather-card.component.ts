@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   
 export class WeatherCardComponent {
 
-  @Input() card?: { day: string, icon: string, temp: string | number };
+  @Input() card?: { day: string, icon: string, temp: string | number, isFave?:boolean };
 
 }
