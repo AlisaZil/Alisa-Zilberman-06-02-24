@@ -12,6 +12,10 @@ export interface Place{
   Version: number
 }
 
+export interface forecast{
+  DailyForecasts: {Date:string, Temperature: {}}
+}
+
 @Injectable({
   providedIn: 'root'
 })

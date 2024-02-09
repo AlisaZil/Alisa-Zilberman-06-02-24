@@ -1,0 +1,21 @@
+
+    <div class="today-forcast-section">
+
+        <div class="header">
+            <p class="place-name">New York</p>
+            <p class="date">Monday 7:00AM</p>
+        </div>
+
+        <div class="weather-section">
+            <img class="icon" src="../../assets/icons/sun.svg" alt="">
+            <div class="temp">30C</div>
+        </div>
+
+    </div>
+
+    <div class="week-forcast-section">
+        <weather-card 
+        class="card"
+        *ngFor="let forcast of weekForcast" 
+        [card]="forcast"></weather-card>
+    </div>
