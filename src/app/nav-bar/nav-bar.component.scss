@@ -5,7 +5,33 @@
     right: 0;
 
     width: 15%;
-
-
     background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    user-select: none;
+
+    .button-link-section{
+
+        .button-link{
+            font-size: calc(13px + 1.2vw);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .main{
+            margin-bottom: 10px;
+        }
+
+        .button-link:hover{
+            padding-left: 8px;
+        }
+
+        .button-link:active{
+            font-weight: 500;
+        }
+    }
 }
