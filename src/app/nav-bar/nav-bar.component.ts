@@ -16,10 +16,10 @@ export class NavBarComponent {
 
   handleButtonLinkClick(e: MouseEvent) {
 
-    let buttonLinkValue = (e.target as HTMLParagraphElement).textContent;
+    let buttonLinkValue = (e.target as HTMLParagraphElement)?.textContent;
 
     if (buttonLinkValue) {
-      this.currSelectedButtonLink = String(buttonLinkValue);
+      this.currSelectedButtonLink = buttonLinkValue;
     }
 
     this.buttonLinkClick.emit(e);
