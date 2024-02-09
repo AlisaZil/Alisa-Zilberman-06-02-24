@@ -37,10 +37,12 @@
 .body{
     width: fit-content;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    flex-direction: column;
 
     .label{
         margin-right: 10px;
+        font-size: 20px;
     }
 }
