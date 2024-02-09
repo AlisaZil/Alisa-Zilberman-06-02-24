@@ -8,7 +8,7 @@
     </div>
 
     <div class="settings-section">
-        <toggle [label]="'Dark Mode'"></toggle>
-        <toggle [label]="'Celsius/Fahrenheit'"></toggle>
+        <toggle [label]="'Dark Mode'" (toggleClick)="handleToggleClick($event, 'Dark Mode')"></toggle>
+        <toggle [label]="'Celsius/Fahrenheit'" (toggleClick)="handleToggleClick($event, 'Celsius/Fahrenheit')"></toggle>
     </div>
 </div>
