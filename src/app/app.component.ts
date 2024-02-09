@@ -34,4 +34,9 @@ export class AppComponent {
       this.isComboBoxOpen = false;
     }
   }
+
+  handleButtonLinkClick(e:string) {
+    console.log(e);
+    
+  }
 }

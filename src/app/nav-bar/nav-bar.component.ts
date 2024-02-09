@@ -9,20 +9,15 @@ export class NavBarComponent {
 
   @Input() isNavbarOpen: boolean = false;
 
-  @Output() buttonLinkClick = new EventEmitter<MouseEvent>();
+  @Output() buttonLinkClick = new EventEmitter<string>();
   @Output() toggleLinkClick = new EventEmitter<{ value: boolean, name: string }>();
   
   public currSelectedButtonLink: string = 'Main';
 
-  handleButtonLinkClick(e: MouseEvent) {
+  handleButtonLinkClick(name: string) {
 
-    let buttonLinkValue = (e.target as HTMLParagraphElement)?.textContent;
-
-    if (buttonLinkValue) {
-      this.currSelectedButtonLink = buttonLinkValue;
-    }
-
-    this.buttonLinkClick.emit(e);
+    this.currSelectedButtonLink = name;
+    this.buttonLinkClick.emit(name);
 
   }
 

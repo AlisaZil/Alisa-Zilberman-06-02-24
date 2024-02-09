@@ -4,11 +4,11 @@
 
         <p
         class="button-link main {{currSelectedButtonLink === 'Main'? 'active':''}}" 
-        (click)="handleButtonLinkClick($event)">Main</p>
+        (click)="handleButtonLinkClick('Main')">Main</p>
 
         <p 
         class="button-link favorites {{currSelectedButtonLink === 'Favorites'? 'active':''}}" 
-        (click)="handleButtonLinkClick($event)">Favorites</p>
+        (click)="handleButtonLinkClick('Favorites')">Favorites</p>
 
     </div>
 
