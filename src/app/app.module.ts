@@ -11,13 +11,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     WeatherCardComponent,
-    NavBarComponent
-=======
-    MainComponent,
-    WeatherCardComponent
->>>>>>> main
+    NavBarComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
