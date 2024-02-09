@@ -1,1 +1,4 @@
-<p>toggle works!</p>
+<div (click)="handleToggleClick($event)"
+class="toggle {{toggleStatus? 'right':'left'}}" >
+    <div class="toggle-ball"></div>
+</div>
