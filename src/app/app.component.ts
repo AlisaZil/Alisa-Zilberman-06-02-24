@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WeatherService } from './services/weather.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,27 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  constructor(){}
+  placesList: any[] = [];
+  isComboBoxOpen: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private weatherService:WeatherService){}
+
+  ngOnInit(): void { }
+  
+   searchForPlaces(e: KeyboardEvent) {
+    
+    let inputValue: string = (e.target as HTMLInputElement).value;
+
+    if (inputValue) {
+
+      this.isComboBoxOpen = true;
+
+      // this.weatherService.getPlacesByString(inputValue).subscribe(res => {
+      //   this.placesList = res;
+      // })
+    } else {
+      this.placesList = [];
+      this.isComboBoxOpen = false;
+    }
+  }
 }
