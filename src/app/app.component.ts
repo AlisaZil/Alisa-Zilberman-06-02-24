@@ -12,6 +12,8 @@ export class AppComponent {
   placesList: any[] = [];
   isComboBoxOpen: boolean = false;
 
+  public isNavbarOpen: boolean = false;
+
   constructor(private weatherService:WeatherService){}
 
   ngOnInit(): void { }

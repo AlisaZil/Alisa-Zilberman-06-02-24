@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'nav-bar',
@@ -7,11 +7,23 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavBarComponent {
 
-  @Output() buttonLinkClick = new EventEmitter<MouseEvent>();
-  @Output() toggleLinkClick = new EventEmitter<{value:boolean, name:string}>();
+  @Input() isNavbarOpen: boolean = false;
 
-  handleButtonLinkClick(e:MouseEvent) {
+  @Output() buttonLinkClick = new EventEmitter<MouseEvent>();
+  @Output() toggleLinkClick = new EventEmitter<{ value: boolean, name: string }>();
+  
+  public currSelectedButtonLink: string = 'Main';
+
+  handleButtonLinkClick(e: MouseEvent) {
+
+    let buttonLinkValue = (e.target as HTMLParagraphElement).textContent;
+
+    if (buttonLinkValue) {
+      this.currSelectedButtonLink = String(buttonLinkValue);
+    }
+
     this.buttonLinkClick.emit(e);
+
   }
 
   handleToggleClick(value: boolean, name: string) {

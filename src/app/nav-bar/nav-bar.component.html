@@ -1,9 +1,16 @@
-<div class="nav-bar">
+<div class="nav-bar" [ngStyle]="{'right': isNavbarOpen?'-15%':'0px'}">
 
     <div class="button-link-section">
 
-        <p class="button-link main" (click)="handleButtonLinkClick($event)">Main</p>
-        <p class="button-link favorites" (click)="handleButtonLinkClick($event)">Favorites</p>
+        <p
+        class="button-link main {{currSelectedButtonLink === 'Main'? 'active':''}}" 
+        (click)="handleButtonLinkClick($event)">
+        Main</p>
+
+        <p 
+        class="button-link favorites {{currSelectedButtonLink === 'Favorites'? 'active':''}}" 
+        (click)="handleButtonLinkClick($event)">
+        Favorites</p>
 
     </div>
 
@@ -19,3 +26,5 @@
 
     </div>
 </div>
+
+<div class="dim-background {{isNavbarOpen? 'fade-out':'fade-in'}}"></div>
