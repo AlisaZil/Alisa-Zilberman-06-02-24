@@ -9,15 +9,20 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
+
+    padding: 100px 0;
 
     user-select: none;
 
     .button-link-section{
 
+        width: 70%;
+        height: fit-content;
+
         .button-link{
-            font-size: calc(13px + 1.2vw);
+            font-size: calc(10px + 1vw);
             cursor: pointer;
             transition: 0.3s;
         }
@@ -33,5 +38,10 @@
         .button-link:active{
             font-weight: 500;
         }
+    }
+
+    .settings-section{
+        height: fit-content;
+        width: 70%;
     }
 }
