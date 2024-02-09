@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'nav-bar',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
 
+  @Output() buttonLinkClick = new EventEmitter<MouseEvent>();
+
+  handleButtonLinkClick(e:MouseEvent) {
+    this.buttonLinkClick.emit(e);
+  }
 }
