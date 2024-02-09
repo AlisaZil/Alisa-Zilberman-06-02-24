@@ -35,8 +35,7 @@ export class AppComponent {
     }
   }
 
-  handleButtonLinkClick(e:string) {
-    console.log(e);
-    
+  handleButtonLinkClick(e: string) {
+    this.isNavbarOpen = false;
   }
 }
