@@ -1,1 +1,18 @@
-<p>search-bar works!</p>
+ <div class="search-box">
+        <input 
+        type="text" 
+        placeholder="Type To Search" 
+        (keyup)="searchForPlaces($event)"
+        (focusout)="isComboBoxOpen = false" 
+        class="{{isComboBoxOpen? 'input-open':'input-close'}}">
+    
+        <div class="combo-box" 
+        [ngStyle]="{'max-height': isComboBoxOpen? '170px':'0px'}">
+
+            <div class="option" 
+            *ngFor="let place of placesList">
+            {{place}}</div>
+
+        </div>
+        
+    </div>
