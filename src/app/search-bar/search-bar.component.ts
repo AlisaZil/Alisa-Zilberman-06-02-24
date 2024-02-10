@@ -24,8 +24,6 @@ export class SearchBarComponent {
       this.isComboBoxOpen = true;
 
       this.placesList = ['tokyo', 'tel aviv', 'london', 'monte carlo'];
-      console.log(this.placesList);
-      
       // this.weatherService.getPlacesByString(inputValue).subscribe(res => {
       //   this.placesList = res;
       //   console.log(res);
@@ -36,5 +34,9 @@ export class SearchBarComponent {
       this.placesList = [];
       this.isComboBoxOpen = false;
     }
+    }
+  
+  handleOptionClick(name:string, key:string) {
+    this.selectedPlace.emit({ name: name, key: key });
   }
 }
