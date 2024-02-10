@@ -8,10 +8,10 @@ import { Place, WeatherService } from '../services/weather.service';
 })
 export class MainComponent {
 
-  weekForcast: any[] = [{ day: "Sunday", icon: "sun", temp: 30 },
-    { day: "Monday", icon: "cloud", temp: 13 },
-    { day: "Sunday", icon: "sun-cloud", temp: 20 },
-    { day: "Sunday", icon: "sun", temp: 30 }]
+  weekForcast: any[] = [{ name: "Sunday", icon: "sun", temp: 30 },
+    { name: "Monday", icon: "cloud", temp: 13 },
+    { name: "Sunday", icon: "sun-cloud", temp: 20 },
+    { name: "Sunday", icon: "sun", temp: 30 }]
 
   constructor() { }
 
