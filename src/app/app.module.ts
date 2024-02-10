@@ -10,6 +10,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { ClickOutsideDirective } from './click-outside.directive';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ClickOutsideDirective } from './click-outside.directive';
     ToggleComponent,
     MainComponent,
     NavBarComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
