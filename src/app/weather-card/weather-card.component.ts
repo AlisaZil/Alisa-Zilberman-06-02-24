@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'weather-card',
@@ -8,6 +8,11 @@ import { Component, Input } from '@angular/core';
   
 export class WeatherCardComponent {
 
-  @Input() card?: { placeName: string, icon: string, temp: string | number };
+  @Input() card?: { name: string, icon: string, temp: string | number, size:'small'|'large', isFave?: boolean, isClickble?: boolean };
+  @Output() cardClick = new EventEmitter<string>();
 
+  handleCardClick(name:string) {
+    this.cardClick.emit(name);
+  }
+  
 }

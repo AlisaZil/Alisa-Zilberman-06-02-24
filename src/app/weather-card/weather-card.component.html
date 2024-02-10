@@ -1,7 +1,11 @@
-<div class="card" *ngIf="card">
+<div class="card {{card.isClickble?'clickble':''}} {{card.size}}" *ngIf="card">
 
-    <p class="place-name">{{card.placeName}}</p>
-    <img src="../../assets/icons/{{card.icon}}" alt="weather-icon" class="weather-icon">
+    <div *ngIf="card.isFave" class="heart-icon">
+        <img src="../../assets/icons/heart.svg" alt="heart">
+    </div>
+
+    <p class="name">{{card.name}}</p>
+    <img src="../../assets/icons/{{card.icon}}.svg" alt="weather-icon" class="weather-icon">
     <p class="temp">{{card.temp}}</p>
 
 </div>

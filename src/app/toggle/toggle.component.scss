@@ -1,0 +1,48 @@
+.toggle{
+
+    width: 90px;
+    height: 40px;
+    background-color: #6891c1;
+
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+
+    .toggle-ball{
+        height: 34px;
+        width: 34px;
+
+        background-color: white;
+        border-radius: 100%;
+        transition: 0.3s;
+    }
+}
+.left {
+    background-color: #6891c1;
+    .toggle-ball{
+        margin-left: 4px;
+    }
+}
+
+.right {
+    background-color: #313745;
+    .toggle-ball{
+        margin-left: 52px;
+    }
+}
+
+.body{
+    width: fit-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    .label{
+        margin-right: 10px;
+        font-size: 20px;
+    }
+}
