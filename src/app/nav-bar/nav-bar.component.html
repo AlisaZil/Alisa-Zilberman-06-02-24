@@ -1,4 +1,7 @@
-<div class="nav-bar" [ngStyle]="{'right': isNavbarOpen?'0px':'-15%'}">
+<div 
+class="nav-bar" 
+(clickOutside)="clickOutside($event)"
+[ngStyle]="{'right': isNavbarOpen?'0px':'-15%'}">
 
     <div class="button-link-section">
 

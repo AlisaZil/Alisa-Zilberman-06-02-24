@@ -10,6 +10,7 @@ export class NavBarComponent {
   @Input() isNavbarOpen: boolean = false;
 
   @Output() buttonLinkClick = new EventEmitter<string>();
+  @Output() NavBarClickOutside = new EventEmitter<boolean>();
   @Output() toggleLinkClick = new EventEmitter<{ value: boolean, name: string }>();
   
   public currSelectedButtonLink: string = 'Main';
@@ -23,5 +24,9 @@ export class NavBarComponent {
 
   handleToggleClick(value: boolean, name: string) {
     this.toggleLinkClick.emit({ value: value, name: name });
+  }
+
+  clickOutside(e: void) {
+    this.NavBarClickOutside.emit();
   }
 }
