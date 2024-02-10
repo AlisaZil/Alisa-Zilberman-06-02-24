@@ -16,7 +16,8 @@ import { ToggleComponent } from './toggle/toggle.component';
     WeatherCardComponent,
     FavoriteComponent,
     ToggleComponent,
-    MainComponent
+    MainComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
