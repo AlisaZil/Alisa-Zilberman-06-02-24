@@ -1,3 +1,8 @@
-<div class="page">
-    
+<div class="favorite-section">
+
+    <weather-card *ngIf="favoriteWeatherList; else noFave"></weather-card>
+
+    <ng-template #noFave>
+        <p class="empty">You have no favorites...</p>
+    </ng-template>
 </div>

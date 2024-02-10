@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class FavoriteComponent {
 
+  public favoriteWeatherList?: any[] = undefined; //change from any
+
+
 }
