@@ -1,4 +1,4 @@
-<div class="card" *ngIf="card">
+<div class="card {{card.isClickble?'clickble':''}}" *ngIf="card">
 
     <div *ngIf="card.isFave" class="heart-icon">
         <img src="../../assets/icons/heart.svg" alt="heart">

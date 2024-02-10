@@ -29,3 +29,17 @@
         width: 20px;
     }
 }
+
+.clickble{
+    cursor: pointer;
+}
+
+.clickble:hover{
+    background-color: #ffffff74;
+}
+
+.clickble:active {
+    background-color: #ffffff74;
+    transform: scale(0.98);
+    transition: 0.3s;
+}
