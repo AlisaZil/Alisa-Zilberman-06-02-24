@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   
 export class WeatherCardComponent {
 
-  @Input() card?: { name: string, icon: string, temp: string | number, isFave?: boolean, isClickble?: boolean };
+  @Input() card?: { name: string, icon: string, temp: string | number, size:'small'|'large', isFave?: boolean, isClickble?: boolean };
   @Output() cardClick = new EventEmitter<string>();
 
   handleCardClick(name:string) {

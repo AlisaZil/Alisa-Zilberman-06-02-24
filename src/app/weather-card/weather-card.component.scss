@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: space-around;
 
-    .day{
+    .name{
         font-size: 22px;
     }
 
@@ -27,6 +27,26 @@
         right:10px;
         height: 20px;
         width: 20px;
+    }
+}
+
+.large{
+    width: 14vw;
+    height: 30vh;
+    min-width: 250px;
+    min-height: 280px;
+
+    .name{
+        font-size: 35px;
+    }
+
+    .temp{
+        font-size: 38px;
+    }
+
+    .weather-icon{
+        object-fit: cover;
+        height: 30%;
     }
 }
 
