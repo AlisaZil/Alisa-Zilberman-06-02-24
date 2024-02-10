@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherService } from './services/weather.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent {
 
   public isNavbarOpen: boolean = false;
 
-  constructor(private weatherService:WeatherService){}
+  constructor(private weatherService: WeatherService,
+  private router: Router) { }
 
   ngOnInit(): void { }
   
@@ -37,5 +39,6 @@ export class AppComponent {
 
   handleButtonLinkClick(e: string) {
     this.isNavbarOpen = false;
+    this.router.navigateByUrl(e);
   }
 }

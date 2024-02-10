@@ -10,12 +10,12 @@ const routes: Routes = [
     component: MainComponent,
   },
   {
-    path: 'Favorite',
+    path: 'Favorites',
     component: FavoriteComponent,
   },
   {
-    path: '/',
-    component: MainComponent,
+    path: '**',
+    redirectTo: '/Main'
   },
 ];
 
