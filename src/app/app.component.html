@@ -2,7 +2,8 @@
 
     <div class="nav-bar">
         <img src="../assets/icons/logo.svg" alt="logo" class="logo">
-        <img src="../assets/icons/bars.svg" alt="bars" class="bars">
+        <img (click)="isNavbarOpen = !isNavbarOpen"
+        src="../assets/icons/bars.svg" alt="bars" class="bars">
     </div>
 
     <div class="search-box">
@@ -25,7 +26,12 @@
     </div>
 
     <div class="content">
-        <main></main>
+        <router-outlet></router-outlet>
     </div>
 
 </div>
+
+<nav-bar 
+[isNavbarOpen]="isNavbarOpen" 
+(buttonLinkClick)="handleButtonLinkClick($event)">
+</nav-bar>

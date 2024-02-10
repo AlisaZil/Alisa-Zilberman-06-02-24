@@ -1,0 +1,31 @@
+<div 
+class="nav-bar" 
+(clickOutside)="clickOutside($event)"
+[ngStyle]="{'right': isNavbarOpen?'0px':'-15%'}">
+
+    <div class="button-link-section">
+
+        <p
+        class="button-link main {{currSelectedButtonLink === 'Main'? 'active':''}}" 
+        (click)="handleButtonLinkClick('Main')">Main</p>
+
+        <p 
+        class="button-link favorites {{currSelectedButtonLink === 'Favorites'? 'active':''}}" 
+        (click)="handleButtonLinkClick('Favorites')">Favorites</p>
+
+    </div>
+
+    <div class="settings-section">
+
+        <toggle
+        [label]="'Dark Mode'" 
+        (toggleClick)="handleToggleClick($event, 'Dark Mode')"></toggle>
+
+        <toggle 
+        [label]="'Celsius/Fahrenheit'" 
+        (toggleClick)="handleToggleClick($event, 'Celsius/Fahrenheit')"></toggle>
+
+    </div>
+</div>
+
+<div class="dim-background {{isNavbarOpen? 'fade-in':'fade-out'}}"></div>

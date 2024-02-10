@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherService } from './services/weather.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,10 @@ export class AppComponent {
   placesList: any[] = [];
   isComboBoxOpen: boolean = false;
 
-  constructor(private weatherService:WeatherService){}
+  public isNavbarOpen: boolean = false;
+
+  constructor(private weatherService: WeatherService,
+  private router: Router) { }
 
   ngOnInit(): void { }
   
@@ -31,5 +35,10 @@ export class AppComponent {
       this.placesList = [];
       this.isComboBoxOpen = false;
     }
+  }
+
+  handleButtonLinkClick(e: string) {
+    this.isNavbarOpen = false;
+    this.router.navigateByUrl(e);
   }
 }

@@ -6,8 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { ClickOutsideDirective } from './click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ToggleComponent } from './toggle/toggle.component';
     WeatherCardComponent,
     FavoriteComponent,
     ToggleComponent,
-    MainComponent
+    MainComponent,
+    NavBarComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
