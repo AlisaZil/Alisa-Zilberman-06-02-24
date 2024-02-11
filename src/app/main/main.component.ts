@@ -9,27 +9,24 @@ import { WeatherCard } from '../weather-card/weather-card.component';
 })
 export class MainComponent {
 
-  @Input() place: { name: string, key: string } = { name: 'Tel Aviv', key: '215854' };
-
+  public placeName: string = 'Tel Aviv';
   weekForcast: WeatherCard[] = [];
 
   constructor(private weatherService: WeatherService) { }
   
-  ngOnChanges(): void {
-    this.getWeatherData();
+  ngOnInit(): void {
+    // this.getWeatherData('215854');
   }
 
-  // ngOnInit(): void {
-  //   this.getWeatherData();
-  // }
-
-  getWeatherData() {
-    this.weatherService.getFiveDaysForecastByKey(this.place.key).subscribe((res) => {
+  getWeatherData(key:string) {
+    this.weatherService.getFiveDaysForecastByKey(key).subscribe((res) => {
       this.arrangeWeekForecast(res.DailyForecasts)
     })
   }
 
   arrangeWeekForecast(weekList: any[]) {
+
+    this.weekForcast = [];
     
     for (let i = 1; i < weekList.length; i++) {
       let Temperature = weekList[i].Temperature;
@@ -44,6 +41,11 @@ export class MainComponent {
 
   getCurrentDate() {
     return new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) ;
+  }
+
+
+  handleSearchBarEvent(place: { name: string, key: string }) {
+    this.getWeatherData(place.key);
   }
 
 }

@@ -22,19 +22,19 @@ export class SearchBarComponent {
 
       this.isComboBoxOpen = true;
       this.weatherService.getPlacesByString(this.searchText).subscribe(res => {
-      this.placesList = res;
-    })
+        this.placesList = res;
+      }) 
     } else {
       this.placesList = [];
       this.isComboBoxOpen = false;
     }
   }
   
-  handleOptionClick(name: string, key: string) {
-
+  handleOptionClick(place: any) {
+    
     this.searchText = name;
     this.isComboBoxOpen = false; 
 
-    this.selectedPlace.emit({ name: name, key: key });
+    this.selectedPlace.emit({ name: place.LocalizedName, key: place.Key });
   }
 }

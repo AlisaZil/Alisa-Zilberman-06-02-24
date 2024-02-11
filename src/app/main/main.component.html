@@ -1,11 +1,11 @@
 
     <div class="today-forcast-section">
         
-    <search-bar></search-bar>
+    <search-bar (selectedPlace)="handleSearchBarEvent($event)"></search-bar>
 
 
         <div class="header">
-            <p class="place-name">{{place.name}}</p>
+            <p class="place-name">{{placeName}}</p>
             <p class="date">{{getCurrentDate()}}</p>
         </div>
 
