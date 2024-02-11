@@ -5,8 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CTofPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: number, type:'f'|'c'): string {
+    if (type === 'f') {
+      return `${value}F`;
+    } else {
+      return String((5 / 9) * (value - 32));
+    }
   }
 
 }
