@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; 
-
+import { NgxSpinnerModule } from "ngx-spinner";
 import { HttpClientModule } from '@angular/common/http'; 
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
@@ -28,7 +30,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

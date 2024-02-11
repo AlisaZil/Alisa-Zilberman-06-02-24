@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { WeatherService } from '../services/weather.service'; 
 import { WeatherCard } from '../weather-card/weather-card.component';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'main',
@@ -9,19 +10,28 @@ import { WeatherCard } from '../weather-card/weather-card.component';
 })
 export class MainComponent {
 
+  public isFavorite: boolean = false;
   public placeName: string = 'Tel Aviv';
-  weekForcast: WeatherCard[] = [];
+  public weekForcast: WeatherCard[] = [];
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(
+    private weatherService: WeatherService,
+    private spinner:NgxSpinnerService) { }
   
   ngOnInit(): void {
     // this.getWeatherData('215854');
+    this.checkIfFave();
   }
 
-  getWeatherData(key:string) {
+  getWeatherData(key: string) {
+
+    this.spinner.show();
+
     this.weatherService.getFiveDaysForecastByKey(key).subscribe((res) => {
-      this.arrangeWeekForecast(res.DailyForecasts)
+      this.arrangeWeekForecast(res.DailyForecasts);
+      this.spinner.hide();
     })
+
   }
 
   arrangeWeekForecast(weekList: any[]) {
@@ -45,7 +55,18 @@ export class MainComponent {
 
 
   handleSearchBarEvent(place: { name: string, key: string }) {
+    this.placeName = place.name
     this.getWeatherData(place.key);
+    this.checkIfFave();
+  }
+
+  handleHeartClick() {
+    this.isFavorite = !this.isFavorite;
+    this.isFavorite? localStorage.setItem(this.placeName, 'fave'): localStorage.removeItem(this.placeName);
+  }
+
+  checkIfFave() {
+    this.isFavorite = localStorage.getItem(this.placeName) ? true : false;
   }
 
 }

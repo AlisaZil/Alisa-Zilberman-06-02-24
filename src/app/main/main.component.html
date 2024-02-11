@@ -5,8 +5,17 @@
 
 
         <div class="header">
-            <p class="place-name">{{placeName}}</p>
+
+            <div class="top-row">
+                <p class="place-name">{{placeName}}</p>
+                <img 
+                (click)="handleHeartClick()" 
+                class="heart" 
+                src="../../assets/icons/heart{{isFavorite?'':'-hollow'}}.svg" alt="heart">
+            </div>
+
             <p class="date">{{getCurrentDate()}}</p>
+
         </div>
 
         <div class="weather-section">
