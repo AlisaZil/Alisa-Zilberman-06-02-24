@@ -1,6 +1,10 @@
 <div class="favorite-section">
 
-    <weather-card *ngIf="favoriteWeatherList; else noFave"></weather-card>
+    <ng-container *ngIf="favoriteWeatherList; else noFave">
+        <weather-card *ngFor="let card of favoriteWeatherList" [card]="card"></weather-card>
+    </ng-container>
+    
+    
 
     <ng-template #noFave>
         <p class="empty">You have no favorites...</p>

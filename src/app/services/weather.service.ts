@@ -34,4 +34,8 @@ export class WeatherService {
     return this.httpClient.get<any>(this.URL + '/forecasts/v1/daily/5day/' + placeKey + '?apikey=' + this.apiKey);
   }
 
+  getOneDayForecastByKey(placeKey:string) {
+    return this.httpClient.get<any>(this.URL + '/forecasts/v1/daily/1day/' + placeKey + '?apikey=' + this.apiKey);
+  }
+
 }

@@ -10,8 +10,9 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class MainComponent {
 
+  public currPlace: { name: string, key: string } = {name:'Tel Aviv', key:'215854'}
+
   public isFavorite: boolean = false;
-  public placeName: string = 'Tel Aviv';
   public weekForcast: WeatherCard[] = [];
 
   constructor(
@@ -19,7 +20,7 @@ export class MainComponent {
     private spinner:NgxSpinnerService) { }
   
   ngOnInit(): void {
-    // this.getWeatherData('215854');
+    // this.getWeatherData(currPlace.key);
     this.checkIfFave();
   }
 
@@ -54,18 +55,19 @@ export class MainComponent {
   }
 
   handleSearchBarEvent(place: { name: string, key: string }) {
-    this.placeName = place.name
+    this.currPlace.name = place.name;
+    this.currPlace.key = place.key;
     this.getWeatherData(place.key);
     this.checkIfFave();
   }
 
   handleHeartClick() {
     this.isFavorite = !this.isFavorite;
-    this.isFavorite? localStorage.setItem(this.placeName, 'fave'): localStorage.removeItem(this.placeName);
+    this.isFavorite? localStorage.setItem(this.currPlace.name, this.currPlace.key): localStorage.removeItem(this.currPlace.name);
   }
 
   checkIfFave() {
-    this.isFavorite = localStorage.getItem(this.placeName) ? true : false;
+    this.isFavorite = localStorage.getItem(this.currPlace.name) ? true : false;
   }
 
 }
