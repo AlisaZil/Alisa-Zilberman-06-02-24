@@ -53,7 +53,6 @@ export class MainComponent {
     return new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) ;
   }
 
-
   handleSearchBarEvent(place: { name: string, key: string }) {
     this.placeName = place.name
     this.getWeatherData(place.key);
