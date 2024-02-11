@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; 
 
 import { HttpClientModule } from '@angular/common/http'; 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { ClickOutsideDirective } from './click-outside.directive';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ClickOutsideDirective } from './click-outside.directive';
     ToggleComponent,
     MainComponent,
     NavBarComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
