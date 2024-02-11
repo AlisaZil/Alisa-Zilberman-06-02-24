@@ -2,17 +2,17 @@
     <input 
         type="text" 
         placeholder="Type To Search" 
-        (keyup)="searchForPlaces($event)"
-        (focusout)="isComboBoxOpen = false" 
+        (keyup)="searchForPlaces()"
+        [(ngModel)]="searchText"
         class="{{isComboBoxOpen? 'input-open':'input-close'}}">
     
     <div class="combo-box" 
     [ngStyle]="{'max-height': isComboBoxOpen? '170px':'0px'}">
 
         <div class="option" 
-        (click)="handleOptionClick(place.location, place.key)"
+        (click)="handleOptionClick(place.LocalizedName, place.key)"
         *ngFor="let place of placesList">
-        {{place}}</div>
+        {{place.LocalizedName}}</div>
 
     </div>
         

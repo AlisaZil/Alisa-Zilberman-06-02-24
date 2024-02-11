@@ -10,33 +10,31 @@ export class SearchBarComponent {
 
   @Output() selectedPlace = new EventEmitter<{ name: string, key: string }>();
 
-  placesList: any[] = ['tokyo','tel aviv', 'london','monte carlo'];
-  isComboBoxOpen: boolean = false;
+  public searchText: any;
+  public placesList: any[] = [];
+  public isComboBoxOpen: boolean = false;
 
   constructor(private weatherService: WeatherService,){}
 
-    searchForPlaces(e: KeyboardEvent) {
-    
-    let inputValue: string = (e.target as HTMLInputElement).value;
+  searchForPlaces() {
 
-    if (inputValue) {
+    if (this.searchText) {
 
       this.isComboBoxOpen = true;
-
-      this.placesList = ['tokyo', 'tel aviv', 'london', 'monte carlo'];
-      // this.weatherService.getPlacesByString(inputValue).subscribe(res => {
-      //   this.placesList = res;
-      //   console.log(res);
-        
-      // })
-
+      this.weatherService.getPlacesByString(this.searchText).subscribe(res => {
+      this.placesList = res;
+    })
     } else {
       this.placesList = [];
       this.isComboBoxOpen = false;
     }
-    }
+  }
   
-  handleOptionClick(name:string, key:string) {
+  handleOptionClick(name: string, key: string) {
+
+    this.searchText = name;
+    this.isComboBoxOpen = false; 
+
     this.selectedPlace.emit({ name: name, key: key });
   }
 }

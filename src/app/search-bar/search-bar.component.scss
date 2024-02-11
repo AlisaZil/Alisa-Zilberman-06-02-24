@@ -48,12 +48,8 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
 
-            overflow-y: scroll;
-
-            transition-property: all;
-            transition-duration: .3s;
-            transition-timing-function: cubic-bezier(1, 1, 1, 1);
-
+            overflow-y: auto;
+            
             .option{
                 height: 40px;
                 padding-left: 15px;
