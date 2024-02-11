@@ -19,14 +19,32 @@
 
             margin-bottom: 60px;
 
-            .place-name{
-                font-size: 55px;
+            .top-row{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .place-name {
+                    font-size: 55px;
+                }
+
+                .heart {
+                    height: 30px;
+                    margin-left: 20px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                .heart:active{
+                    transform: scale(0.97);
+                }
             }
 
             .date{
                 font-size: 22px;
                 font-weight: 300;
             }
+
         }
 
         .weather-section{

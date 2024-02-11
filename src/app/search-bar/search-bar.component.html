@@ -10,7 +10,7 @@
     [ngStyle]="{'max-height': isComboBoxOpen? '170px':'0px'}">
 
         <div class="option" 
-        (click)="handleOptionClick(place.LocalizedName, place.key)"
+        (click)="handleOptionClick(place)"
         *ngFor="let place of placesList">
         {{place.LocalizedName}}</div>
 
