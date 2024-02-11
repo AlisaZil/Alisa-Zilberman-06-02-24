@@ -14,6 +14,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { ClickOutsideDirective } from './click-outside.directive';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { CTofPipe } from './c-tof.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     MainComponent,
     NavBarComponent,
     ClickOutsideDirective,
-    SearchBarComponent
+    SearchBarComponent,
+    CTofPipe
   ],
   imports: [
     BrowserModule,
